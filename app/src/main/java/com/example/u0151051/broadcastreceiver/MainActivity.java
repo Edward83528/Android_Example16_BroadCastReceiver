@@ -11,6 +11,7 @@ import android.widget.Toast;
 
 //寫一個繼承自 BroadCastReceiver 的 Class, 處理 onReceive() 事件(並在AndroidManifest裡註冊這個 BroadCastReceiver Class)
 public class MainActivity extends AppCompatActivity {
+    // 發送廣播事件用的Action名稱(系統或應用程式自己定義的廣播事件，都是使用Action名稱來識別它是哪一種廣播事件)
     public static final String ACTION_SHOW_DIALOG = "com.example.u0151051.broadcastreceiver.showdialog";
     Button btn;
 
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             //發送廣播(App內廣播的發送是透過intent以及 sendBroadCast(intent) 來發送的)
             Intent intent = new Intent();
             intent.setAction(ACTION_SHOW_DIALOG);
+            // 發送廣播事件
             sendBroadcast(intent);
             finish();
         }
